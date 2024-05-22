@@ -1,0 +1,171 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+:root {
+  --Very-Light-Grayish-Blue: #f6f6fe;
+  --Light-Grayish-Blue: #b3b5c6;
+  --Grayish-Blue: #6d708d;
+  --Dark-Grayish-Blue: #494c5f;
+}
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: "Montserrat", sans-serif;
+  font-size: 15px;
+  font-weight: 700;
+}
+body {
+  background-color: var(--Very-Light-Grayish-Blue);
+  background-image: url("./images/bg-top.svg"), url("./images/bg-bottom.svg");
+  background-repeat: no-repeat, no-repeat;
+  background-position: 100% 0, 0 100%;
+}
+.app_container {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  align-items: center;
+  justify-content: center;
+}
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+.header > h2 {
+  font-size: 2rem;
+  color: var(--Grayish-Blue);
+}
+.header_child {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+/* switch */
+.lbl-switch {
+  display: inline-block;
+  width: 55px;
+  height: 30px;
+  background-color: #696fdd;
+  border-radius: 100px;
+  position: relative;
+  cursor: pointer;
+}
+#btn-switch:checked~ .lbl-switch {
+  background-color: #a3a8f0;
+}
+.lbl-switch:after {
+  position: absolute;
+  content: '';
+  width: 22px;
+  height: 22px;
+  background-color: #fff;
+  border-radius: 100px;
+  top: 4px;
+  left: 5px;
+  transition: 0.3s;
+}
+#btn-switch:checked~ .lbl-switch:after {
+  left: 28px;
+}
+#btn-switch {
+  display: none;
+}
+.header_child > p {
+  font-weight: 600;
+  color: var(--Light-Grayish-Blue);
+}
+.cards_container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+/* CARD STYLING */
+.card_container {
+  width: 290px;
+  padding: 40px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+}
+.price {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 3rem;
+}
+.dolita {
+  font-size: 1.6rem;
+}
+.Professional {
+  height: 400px;
+  color: #fff;
+  background: rgb(163,168,240);
+  background: linear-gradient(180deg, rgba(163,168,240,1) 0%, rgba(105,111,221,1) 100%);
+  border-radius: 10px;
+}
+.Basic,
+.Master {
+  height: 380px;
+  background-color: #fff;
+  color: var(--Dark-Grayish-Blue);
+}
+.Basic {
+  border-radius: 10px 0 0 10px;
+}
+.Master {
+  border-radius: 0 10px 10px 0;
+}
+hr {
+  width: 100%;
+}
+/* BOTONES */
+.btn-learn-container {
+  width: 100%;
+}
+.btn-learn {
+  width: 100%;
+  height: 35px;
+  border: none;
+  border-radius: 5px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  cursor: pointer;
+}
+.morado {
+  color: #fff;
+  background: rgb(163,168,240);
+  background: linear-gradient(90deg, rgba(163,168,240,1) 0%, rgba(105,111,221,1) 100%);
+  transition: all 0.3s ease;
+}
+.morado:hover {
+  color: rgba(105,111,221,1);
+  background: #fff;
+  border: 1px solid var(--Dark-Grayish-Blue);
+}
+.white {
+  background-color: #fff;
+  color: rgba(105,111,221,1);
+  transition: all 0.3s ease;
+}
+.white:hover {
+  color: #fff;
+  border: 1px solid #fff;
+  background: rgba(105,111,221,1);
+}
+@media screen and (width < 500px) {
+  .app_container {
+    height: 1360px;
+  }
+  .cards_container {
+    flex-direction: column;
+    gap: 20px;
+  }
+  .Basic,
+  .Master {
+    border-radius: 10px;
+  }
+}
